@@ -27,3 +27,9 @@ ArtFen est un site internet permettant à un artiste peintre de publier ses oeuv
  or
  make test 
 ```
+
+### Arrêter toutes les containers docker
+```bash
+sudo chmod -R 777 /var/run/docker.sock
+sudo docker kill $(docker ps -q)
+```
