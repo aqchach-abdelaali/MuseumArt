@@ -10,6 +10,7 @@ ArtFen est un site internet permettant à un artiste peintre de publier ses oeuv
 * Symfony CLI
 * Docker
 * Docker-compose
+* Nodejs et npm
 
  Vous pouvez vérifier les pré-requis (sauf Docker es Docker-compose) avec la commande suivant (de la symfony CLI) :
  ```bash
@@ -17,6 +18,9 @@ ArtFen est un site internet permettant à un artiste peintre de publier ses oeuv
  ```
 ### Lancer l'envirenement de développement 
  ```bash
+ composer install
+ npm install
+ npm run build
  docker-compose up -d
  symfony serve -d
  ```
