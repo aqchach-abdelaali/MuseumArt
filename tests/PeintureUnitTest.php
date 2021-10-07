@@ -16,7 +16,7 @@ class PeintureUnitTest extends TestCase
         $categorie = new Categorie();
         $user = new User();
 
-        $peinture ->setNom('nom')
+        $peinture->setNom('nom')
             ->setLargeur(20.20)
             ->setHauteur(20.20)
             ->setEnVente(true)
@@ -30,17 +30,17 @@ class PeintureUnitTest extends TestCase
             ->setPrix(20.20)
             ->setUser($user);
 
-        $this->assertTrue($peinture->getNom() === 'nom');
-        $this->assertTrue($peinture->getLargeur() == 20.20);
-        $this->assertTrue($peinture->getHauteur() == 20.20);
-        $this->assertTrue($peinture->getEnVente() === true);
+        $this->assertTrue('nom' === $peinture->getNom());
+        $this->assertTrue(20.20 == $peinture->getLargeur());
+        $this->assertTrue(20.20 == $peinture->getHauteur());
+        $this->assertTrue(true === $peinture->getEnVente());
         $this->assertTrue($peinture->getDateRealisation() === $datetime);
         $this->assertTrue($peinture->getCreatedAt() === $datetime);
-        $this->assertTrue($peinture->getDescription() === 'description');
-        $this->assertTrue($peinture->getPortfolio() === true);
-        $this->assertTrue($peinture->getSlug() === 'slug');
-        $this->assertTrue($peinture->getFile() === 'file');
-        $this->assertTrue($peinture->getPrix() == 20.20);
+        $this->assertTrue('description' === $peinture->getDescription());
+        $this->assertTrue(true === $peinture->getPortfolio());
+        $this->assertTrue('slug' === $peinture->getSlug());
+        $this->assertTrue('file' === $peinture->getFile());
+        $this->assertTrue(20.20 == $peinture->getPrix());
         $this->assertContains($categorie, $peinture->getCategorie());
         $this->assertTrue($peinture->getUser() === $user);
     }
@@ -52,7 +52,7 @@ class PeintureUnitTest extends TestCase
         $categorie = new Categorie();
         $user = new User();
 
-        $peinture ->setNom('nom')
+        $peinture->setNom('nom')
             ->setLargeur(20.20)
             ->setHauteur(20.20)
             ->setEnVente(true)
@@ -66,17 +66,17 @@ class PeintureUnitTest extends TestCase
             ->setPrix(20.20)
             ->setUser($user);
 
-        $this->assertFalse($peinture->getNom() === 'falsenom');
-        $this->assertFalse($peinture->getLargeur() == 22.20);
-        $this->assertFalse($peinture->getHauteur() == 22.20);
-        $this->assertFalse($peinture->getEnVente() === false);
+        $this->assertFalse('falsenom' === $peinture->getNom());
+        $this->assertFalse(22.20 == $peinture->getLargeur());
+        $this->assertFalse(22.20 == $peinture->getHauteur());
+        $this->assertFalse(false === $peinture->getEnVente());
         $this->assertFalse($peinture->getDateRealisation() === new \DateTime());
         $this->assertFalse($peinture->getCreatedAt() === new \DateTime());
-        $this->assertFalse($peinture->getDescription() === 'Falsedescription');
-        $this->assertFalse($peinture->getPortfolio() === false);
-        $this->assertFalse($peinture->getSlug() === 'falseslug');
-        $this->assertFalse($peinture->getFile() === 'falsefile');
-        $this->assertFalse($peinture->getPrix() == 25.20);
+        $this->assertFalse('Falsedescription' === $peinture->getDescription());
+        $this->assertFalse(false === $peinture->getPortfolio());
+        $this->assertFalse('falseslug' === $peinture->getSlug());
+        $this->assertFalse('falsefile' === $peinture->getFile());
+        $this->assertFalse(25.20 == $peinture->getPrix());
         $this->assertNotContains(new Categorie(), $peinture->getCategorie());
         $this->assertFalse($peinture->getUser() === new User());
     }

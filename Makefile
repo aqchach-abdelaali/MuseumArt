@@ -44,7 +44,7 @@ cs: ## lint code
 
 .PHONY: cs-dry-run
 cs-dry-run: ## lint code and fix problems
-	./vendor/bin/php-cs-fixer fix --verbose --dry-run --diff --diff-format=udiff
+	./vendor/bin/php-cs-fixer fix --dry-run --using-cache=no --diff --verbose --show-progress=dots
 
 .PHONY: format
 format: ## format code (js, css, html)

@@ -17,11 +17,10 @@ class BlogpostUnitTest extends TestCase
             ->setContenu('contenu')
             ->setSlug('slug');
 
-        $this->assertTrue($blogpost->getTitre() === 'titre');
+        $this->assertTrue('titre' === $blogpost->getTitre());
         $this->assertTrue($blogpost->getCreatedAt() === $datetime);
-        $this->assertTrue($blogpost->getContenu() === 'contenu');
-        $this->assertTrue($blogpost->getSlug() === 'slug');
-
+        $this->assertTrue('contenu' === $blogpost->getContenu());
+        $this->assertTrue('slug' === $blogpost->getSlug());
     }
 
     public function testIsFalse()
@@ -34,11 +33,10 @@ class BlogpostUnitTest extends TestCase
             ->setContenu('contenu')
             ->setSlug('slug');
 
-        $this->assertFalse($blogpost->getTitre() === 'falsetitre');
+        $this->assertFalse('falsetitre' === $blogpost->getTitre());
         $this->assertFalse($blogpost->getCreatedAt() === new \DateTime());
-        $this->assertFalse($blogpost->getContenu() === 'falsecontenu');
-        $this->assertFalse($blogpost->getSlug() === 'falsreslug');
-
+        $this->assertFalse('falsecontenu' === $blogpost->getContenu());
+        $this->assertFalse('falsreslug' === $blogpost->getSlug());
     }
 
     public function testIsEmpty()
@@ -49,6 +47,5 @@ class BlogpostUnitTest extends TestCase
         $this->assertEmpty($blogpost->getCreatedAt());
         $this->assertEmpty($blogpost->getContenu());
         $this->assertEmpty($blogpost->getSlug());
-
     }
 }

@@ -23,10 +23,10 @@ class CommentaireUnitTest extends TestCase
             ->setBlogpost($blogpost)
             ->setPeinture($peinture);
 
-        $this->assertTrue($commentaire->getAuteur() === 'auteur');
-        $this->assertTrue($commentaire->getEmail() === 'baali@test.com');
+        $this->assertTrue('auteur' === $commentaire->getAuteur());
+        $this->assertTrue('baali@test.com' === $commentaire->getEmail());
         $this->assertTrue($commentaire->getCreatedAt() === $datetime);
-        $this->assertTrue($commentaire->getContenu() === 'contenu');
+        $this->assertTrue('contenu' === $commentaire->getContenu());
         $this->assertTrue($commentaire->getBlogpost() === $blogpost);
         $this->assertTrue($commentaire->getPeinture() === $peinture);
     }
@@ -45,10 +45,10 @@ class CommentaireUnitTest extends TestCase
             ->setBlogpost(new Blogpost())
             ->setPeinture(new Peinture());
 
-        $this->assertFalse($commentaire->getAuteur() === 'falseauteur');
-        $this->assertFalse($commentaire->getEmail() === 'falsebaali@test.com');
+        $this->assertFalse('falseauteur' === $commentaire->getAuteur());
+        $this->assertFalse('falsebaali@test.com' === $commentaire->getEmail());
         $this->assertFalse($commentaire->getCreatedAt() === $datetime);
-        $this->assertFalse($commentaire->getContenu() === 'falsecontenu');
+        $this->assertFalse('falsecontenu' === $commentaire->getContenu());
         $this->assertFalse($commentaire->getBlogpost() === $blogpost);
         $this->assertFalse($commentaire->getPeinture() === $peinture);
     }
@@ -64,5 +64,4 @@ class CommentaireUnitTest extends TestCase
         $this->assertEmpty($commentaire->getBlogpost());
         $this->assertEmpty($commentaire->getPeinture());
     }
-
 }
