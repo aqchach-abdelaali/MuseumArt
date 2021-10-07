@@ -11,40 +11,38 @@ class UserUnitTest extends TestCase
     {
         $user = new User();
 
-        $user->setEmail("baali@test.com")
-            ->setPrenom("prenom")
-            ->setNom("nom")
-            ->setPassword("password")
-            ->setAPropos("a propos")
-            ->setInstagram("instagram");
+        $user->setEmail('baali@test.com')
+            ->setPrenom('prenom')
+            ->setNom('nom')
+            ->setPassword('password')
+            ->setAPropos('a propos')
+            ->setInstagram('instagram');
 
-        $this->assertTrue($user->getEmail() === "baali@test.com");
-        $this->assertTrue($user->getPrenom() === "prenom");
-        $this->assertTrue($user->getNom() === "nom");
-        $this->assertTrue($user->getPassword() === "password");
-        $this->assertTrue($user->getAPropos() === "a propos");
-        $this->assertTrue($user->getInstagram() === "instagram");
-
+        $this->assertTrue('baali@test.com' === $user->getEmail());
+        $this->assertTrue('prenom' === $user->getPrenom());
+        $this->assertTrue('nom' === $user->getNom());
+        $this->assertTrue('password' === $user->getPassword());
+        $this->assertTrue('a propos' === $user->getAPropos());
+        $this->assertTrue('instagram' === $user->getInstagram());
     }
 
     public function testIsFalse()
     {
         $user = new User();
 
-        $user->setEmail("baali@test.com")
-            ->setPrenom("prenom")
-            ->setNom("nom")
-            ->setPassword("password")
-            ->setAPropos("a propos")
-            ->setInstagram("instagram");
+        $user->setEmail('baali@test.com')
+            ->setPrenom('prenom')
+            ->setNom('nom')
+            ->setPassword('password')
+            ->setAPropos('a propos')
+            ->setInstagram('instagram');
 
-        $this->assertFalse($user->getEmail() === "false@test.com");
-        $this->assertFalse($user->getPrenom() === "false");
-        $this->assertFalse($user->getNom() === "false");
-        $this->assertFalse($user->getPassword() === "false");
-        $this->assertFalse($user->getAPropos() === "a false");
-        $this->assertFalse($user->getInstagram() === "false");
-
+        $this->assertFalse('false@test.com' === $user->getEmail());
+        $this->assertFalse('false' === $user->getPrenom());
+        $this->assertFalse('false' === $user->getNom());
+        $this->assertFalse('false' === $user->getPassword());
+        $this->assertFalse('a false' === $user->getAPropos());
+        $this->assertFalse('false' === $user->getInstagram());
     }
 
     public function testIsEmpty()
@@ -55,8 +53,7 @@ class UserUnitTest extends TestCase
         $this->assertEmpty($user->getPrenom());
         $this->assertEmpty($user->getNom());
         $this->assertEmpty($user->getPassword());
-        $this->assertEmpty($user->getAPropos() );
+        $this->assertEmpty($user->getAPropos());
         $this->assertEmpty($user->getInstagram());
-
     }
 }

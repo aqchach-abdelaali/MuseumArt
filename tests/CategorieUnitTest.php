@@ -15,9 +15,9 @@ class CategorieUnitTest extends TestCase
             ->setDescription('description')
             ->setSlug('slug');
 
-        $this->assertTrue($catrgorie->getNom() === 'nom');
-        $this->assertTrue($catrgorie->getDescription() === 'description');
-        $this->assertTrue($catrgorie->getSlug() === 'slug');
+        $this->assertTrue('nom' === $catrgorie->getNom());
+        $this->assertTrue('description' === $catrgorie->getDescription());
+        $this->assertTrue('slug' === $catrgorie->getSlug());
     }
 
     public function testIsFalse(): void
@@ -28,9 +28,9 @@ class CategorieUnitTest extends TestCase
             ->setDescription('decription')
             ->setSlug('slug');
 
-        $this->assertFalse($catrgorie->getNom() === 'false');
-        $this->assertFalse($catrgorie->getDescription() === 'descriptionFalse');
-        $this->assertFalse($catrgorie->getSlug() === 'slugFalse');
+        $this->assertFalse('false' === $catrgorie->getNom());
+        $this->assertFalse('descriptionFalse' === $catrgorie->getDescription());
+        $this->assertFalse('slugFalse' === $catrgorie->getSlug());
     }
 
     public function testIsEmpty(): void

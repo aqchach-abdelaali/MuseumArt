@@ -23,7 +23,7 @@
         "@popperjs/core": "^2.10.2",
         "bootstrap": "^5.0.0-beta3",
         "aos": "3.0.0-beta.6",
-        "autoprefixer": "^10.3.6",
+        "autoprefixer": "^10.3.7",
         "postcss-loader": "^6.1.1",
         "bigpicture": "^2.5.3",
         "choices.js": "^9.0.1",
