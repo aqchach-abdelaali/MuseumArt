@@ -19,6 +19,18 @@ class BlogpostRepository extends ServiceEntityRepository
         parent::__construct($registry, Blogpost::class);
     }
 
+    /**
+     * @return Blogpost[] Returns an array of Blogpost objects
+     */
+    public function lastTree()
+    {
+        return $this->createQueryBuilder('b')
+            ->orderBy('b.id', 'DESC')
+            ->setMaxResults(3)
+            ->getQuery()
+            ->getResult();
+    }
+
     // /**
     //  * @return Blogpost[] Returns an array of Blogpost objects
     //  */
