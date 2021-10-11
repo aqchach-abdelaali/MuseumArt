@@ -1,0 +1,53 @@
+{% extends 'base.html.twig' %}
+
+    {% block title %}Actualitées{% endblock %}
+
+    {% block body %}
+        <!-- ARTICLES -->
+        <section class="pb-8 pt-7 pt-md-11 ">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+
+                        <!-- Heading -->
+                        <h2 class="mb-0">
+                            Dernières actualitées
+                        </h2>
+
+                        <!--  -->
+                        <p class="mb-5 text-muted">
+                            These span the grid's entire width with several options.
+                        </p>
+
+                    </div>
+                </div> <!-- / .row -->
+                <div class="row">
+                    {% for blogpost in blogposts %}
+                        <div class="col-12 col-lg-4 d-flex">
+                            <div class="card mb-6 shadow-light-lg mb-6 lift lift-lg">
+                                <a class="card-body my-auto" href="#!">
+                                    <h3 class="mt-auto">
+                                        {{ blogpost.titre }}
+                                    </h3>
+                                    <p class="mb-0 text-muted">
+                                        {{ blogpost.contenu|u.truncate(200, '...', false) }}
+                                    </p>
+                                </a>
+                                <a class="card-meta" href="#!">
+                                    <p class="h6 text-uppercase text-muted mb-0 ms-auto">
+                                        <time datetime="2019-05-29">Publiée
+                                            le {{ blogpost.createdAt|date('d/m/Y') }}</time>
+                                    </p>
+                                </a>
+                            </div>
+                        </div>
+                    {% endfor %}
+                </div> <!-- / .row -->
+            </div> <!-- / .container -->
+            <div class="d-flex justify-content-center">
+                {% do blogposts.setPageRange(2) %}
+                {{ knp_pagination_render(blogposts, 'base/pagination.html.twig') }}
+            </div>
+        </section>
+
+    {% endblock %}
