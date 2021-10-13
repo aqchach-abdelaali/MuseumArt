@@ -36,7 +36,7 @@ test: ## run tests
 
 #.PHONY: lint
 #lint: cs-dry-run ## lint code
-#	yarn lint
+#	yarn run lint --fix
 
 .PHONY: cs
 cs: ## lint code
