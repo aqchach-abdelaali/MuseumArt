@@ -24,6 +24,10 @@ ArtFen est un site internet permettant à un artiste peintre de publier ses oeuv
  docker-compose up -d
  symfony serve -d
  ```
+### Lancer les migrations
+```bash
+symfony console doctrine:migrations:migrate
+```
 ### Ajouter des données de tests(Fixtures)
 ```bash
 symfony console doctrine:fixtures:load
