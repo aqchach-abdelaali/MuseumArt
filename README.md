@@ -39,6 +39,15 @@ symfony console doctrine:fixtures:load
  make test 
 ```
 
+## Production
+
+### Envoie des emails de contacts
+
+Les emails de prise de contact sont stockés en BDD, pour les envoyer au peintre par mail, il faut mettre en place un cron sur:
+```bash
+    symfony console app:send-contact
+```
+
 ### Arrêter toutes les containers docker
 ```bash
 sudo chmod -R 777 /var/run/docker.sock
