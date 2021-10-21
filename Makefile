@@ -48,4 +48,4 @@ cs-dry-run: ## lint code and fix problems
 
 .PHONY: format
 format: ## format code (js, css, html)
-	yarn prettier --write "assets/**/*.(js|jsx)"
+	yarn prettier --write "assets/**/*.(js|jsx|twig)"
