@@ -28,7 +28,8 @@
 
                             </div>
                             <a class="col-12 col-md-6 bg-cover card-img-start"
-                               style="background-image: url('/../img/banjo.jpg');" href="#!">
+                               style="background-image: url('/../img/banjo.jpg');"
+                               href="{{ path('realisations_details', {'slug': peinture.slug}) }}">
 
                                 <!-- Image (placeholder) -->
                                 <img src="{{ peinture.file }}" alt="..." class="img-fluid d-md-none invisible">
@@ -44,7 +45,7 @@
                             <div class="col-12 col-md-6">
 
                                 <!-- Body -->
-                                <a class="card-body" href="#!">
+                                <a class="card-body" href="{{ path('realisations_details', {'slug': peinture.slug}) }}">
 
                                     <!-- Heading -->
                                     <h3>
