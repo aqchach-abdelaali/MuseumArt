@@ -35,8 +35,8 @@ jobs:
       - name: Install php dependencies
         run: composer install --prefer-dist --no-progress
 
-#      - name: Lint
-#        run: make lint
+      - name: Lint
+        run: make lint
 
       - name: Run test suite
         run: make test

@@ -38,6 +38,10 @@ test: ## run tests
 #lint: cs-dry-run ## lint code
 #	yarn run lint --fix
 
+.PHONY: lint
+lint: ## lint code
+	php bin/console lint:twig ./templates
+
 .PHONY: cs
 cs: ## lint code
 	./vendor/bin/php-cs-fixer fix --verbose
@@ -48,4 +52,4 @@ cs-dry-run: ## lint code and fix problems
 
 .PHONY: format
 format: ## format code (js, css, html)
-	yarn prettier --write "assets/**/*.(js|jsx|twig)"
+	yarn prettier --write "assets/**/*.(js|jsx)"
