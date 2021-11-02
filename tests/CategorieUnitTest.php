@@ -3,6 +3,7 @@
 namespace App\Tests;
 
 use App\Entity\Categorie;
+use App\Entity\Peinture;
 use PHPUnit\Framework\TestCase;
 
 class CategorieUnitTest extends TestCase
@@ -40,5 +41,20 @@ class CategorieUnitTest extends TestCase
         $this->assertEmpty($catrgorie->getNom());
         $this->assertEmpty($catrgorie->getDescription());
         $this->assertEmpty($catrgorie->getSlug());
+        $this->assertEmpty($catrgorie->getId());
+    }
+
+    public function testAddGetRemovePeinture()
+    {
+        $categorie = new Categorie();
+        $peinture = new Peinture();
+
+        $this->assertEmpty($categorie->getPeintures());
+
+        $categorie->addPeinture($peinture);
+        $this->assertContains($peinture, $categorie->getPeintures());
+
+        $categorie->removePeinture($peinture);
+        $this->assertEmpty($categorie->getPeintures());
     }
 }

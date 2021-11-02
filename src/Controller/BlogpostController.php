@@ -27,11 +27,11 @@ class BlogpostController extends AbstractController
     }
 
     /**
-     * @Route("/actualites/{slug}", name="actualites_detail")
+     * @Route("/actualites/{slug}", name="actualites_details")
      */
     public function detail(Blogpost $blogpost): Response
     {
-        return $this->render('blogpost/detail.html.twig', [
+        return $this->render('blogpost/details.html.twig', [
             'blogpost' => $blogpost,
         ]);
     }
