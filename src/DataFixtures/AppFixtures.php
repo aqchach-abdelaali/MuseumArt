@@ -11,6 +11,9 @@ use Doctrine\Persistence\ObjectManager;
 use Faker\Factory;
 use Symfony\Component\Security\Core\Encoder\UserPasswordEncoderInterface;
 
+/**
+ * @codeCoverageIgnore
+ */
 class AppFixtures extends Fixture
 {
     private UserPasswordEncoderInterface $encoder;
@@ -55,6 +58,18 @@ class AppFixtures extends Fixture
             $manager->persist($blogpost);
         }
 
+        // Création d'un blogpost pour les tests
+
+        $blogpost = new Blogpost();
+
+        $blogpost->setTitre('Blogpost test')
+            ->setCreatedAt($faker->dateTimeBetween('-6 month', 'now'))
+            ->setContenu($faker->text(350))
+            ->setSlug('blogpost-test')
+            ->setUser($user);
+
+        $manager->persist($blogpost);
+
         // Creation de catégories
         for ($k = 0; $k < 5; ++$k) {
             $categorie = new Categorie();
@@ -85,6 +100,33 @@ class AppFixtures extends Fixture
                 $manager->persist($peinture);
             }
         }
+
+        // Creation d'une catégorie de test
+        $categorie = new Categorie();
+
+        $categorie->setNom('Categorie test')
+            ->setDescription($faker->words(10, true))
+            ->setSlug('categorie-test');
+
+        $manager->persist($categorie);
+
+        // PEINTURE pour les test
+        $peinture = new Peinture();
+
+        $peinture->setNom('Peinture test')
+            ->setHauteur($faker->randomFloat(2, 20, 60))
+            ->setEnVente($faker->randomElement([true, false]))
+            ->setDateRealisation($faker->dateTimeBetween('-6 month', 'now'))
+            ->setCreatedAt($faker->dateTimeBetween('-6 month', 'now'))
+            ->setDescription($faker->text())
+            ->setPortfolio($faker->randomElement([true, false]))
+            ->setSlug('peinture-slug')
+            ->setFile('/img/banjo.jpg')
+            ->setPrix($faker->randomFloat(2, 100, 9999))
+            ->setUser($user)
+            ->addCategorie($categorie);
+
+        $manager->persist($peinture);
 
         $manager->flush();
     }
